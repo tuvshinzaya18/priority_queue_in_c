@@ -1,4 +1,6 @@
 // Implementing heap structure.
+#ifndef HEAP_HEADER
+#define HEAP_HEADER
 #include "darray.h"
 
 typedef char * Value_type; 
@@ -11,6 +13,11 @@ typedef struct cell {
     Value_type element;
 } cell;
 
-typedef struct heap {
-    darray* cells;
-} heap;
+int parent(int index);
+int right(int index);
+int left(int index);
+
+void heapify(darray* tree, int index);
+void size(darray* tree);
+
+#endif
